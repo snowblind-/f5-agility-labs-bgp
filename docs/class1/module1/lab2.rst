@@ -79,6 +79,7 @@ Verify eBGP adjacencies are up between E_A_BIGIP-13 and the East Core router - c
 Verify route for the webservice via 10.3.99.0/24 is installed in routing table after eBGP is established between E_A_BIGIP-13 and the East Core router - csr1000v-CORE. 
 			
 .. code-block:: none
+
     E_A_BIGIP-13.local[0]#sh ip route | i 10.2.40.4
     B       10.3.99.0/24 [20/0] via 10.2.40.4, internal, 00:19:39
     E_A_BIGIP-13.local[0]#

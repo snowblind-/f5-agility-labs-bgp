@@ -129,6 +129,7 @@ You need to create a static route to the web server located in the core network 
 Your virtual server should now show available.
 
 .. code-block:: none
+
 	tmsh show ltm virtual
 
 	------------------------------------------------------------------
@@ -671,6 +672,7 @@ Add another virtual server within the VIP subnet.
 Validate that the website is accessible from the jumphost
 
 .. code-block:: none
+
     root@jumphost:~# curl 10.99.99.101
         <html><body><h1>It works!</h1>
         <p>This is the default web page for this server.</p>
@@ -768,6 +770,7 @@ On the active BIG-IP look at the routing table.
 Re-enable the pool and then review the BIG-IP and CPE route tables.
 
 .. code-block:: none
+
     tmsh modify ltm pool pool1 members modify { 10.3.99.200:http { state user-up } }
 
 .. code-block:: none
