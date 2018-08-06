@@ -206,7 +206,8 @@ Your virtual server should now show available on E_A_BIGIP-13:
         Destination      : 10.99.99.102:80
                     
 Configure the route advertisement on the E_A_BIGIP-13:
-		
+------------------------------------------------------
+	
 E_A_BIGIP-13:
 	
 Configure the eBGP session on E_A_BIGIP to East CPE_A. The CPE configuration is already done for you so you only need to configure the BIGIP side of session.
@@ -498,8 +499,10 @@ On E_B_BIGIP verify 10.99.99.0/24 is being advertised outbound to East CPE devic
     E_B_BIGIP-13.local[0]#sh ip bgp nei 10.2.30.4 advertised-routes | i 10.99.99.0/24
     *> 10.99.99.0/24    10.2.30.3                         100      32768 i
     
-    Verify that E_CPE_A_CSR1k is learning the 10.99.99.0/24 inbound from E_B_BIGIP:
-    
+Verify that E_CPE_A_CSR1k is learning the 10.99.99.0/24 inbound from E_B_BIGIP:
+
+.. code-block:: none
+
     csr1000v-E_CPE_A#show ip bgp vpnv4 vrf internet neighbors 10.2.30.3 routes
         BGP table version is 16, local router ID is 2.2.2.2
         Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
@@ -514,7 +517,7 @@ On E_B_BIGIP verify 10.99.99.0/24 is being advertised outbound to East CPE devic
             *m   10.3.99.0/24     10.2.30.3       4294967295             0 65203 65205 i
             *m   10.99.99.0/24    10.2.30.3       4294967295             0 65203 i
     
-    Verify that E_CPE_A_CSR1k is installing 10.99.99.0/24 from E_B_BIGIP:
+Verify that E_CPE_A_CSR1k is installing 10.99.99.0/24 from E_B_BIGIP:
 		
 .. code-block:: none
 
@@ -543,7 +546,7 @@ On E_B_BIGIP verify 10.99.99.0/24 is being advertised outbound to East CPE devic
         B        10.99.99.0/24 [20/4294967294] via 10.2.30.3, 00:25:17
                                 [20/4294967294] via 10.2.20.3, 00:25:17
     
-    Verify advertised prefixes on E_A_BIGIP advertised outbound towards E_CPE_A:
+Verify advertised prefixes on E_A_BIGIP advertised outbound towards E_CPE_A:
 		
 .. code-block:: none
 		
@@ -556,7 +559,7 @@ On E_B_BIGIP verify 10.99.99.0/24 is being advertised outbound to East CPE devic
     *> 10.3.99.0/24     10.2.20.3                                      0 65205 i
     *> 10.99.99.0/24    10.2.20.3                         100      32768 i
 
-    Verify existing BGP AS Path on E_CPE_A for 10.99.99.0/24 from E_A_BIGIP:
+Verify existing BGP AS Path on E_CPE_A for 10.99.99.0/24 from E_A_BIGIP:
 		
 .. code-block:: none
 
@@ -577,13 +580,11 @@ On E_B_BIGIP verify 10.99.99.0/24 is being advertised outbound to East CPE devic
     Total number of prefixes 2 
     csr1000v-E_CPE_A#
 		
-Verify two paths are available and installed in the routing table of E_CPE_A for 10.99.99.0/24 via E_A_BIGIP and E_B_BIGIP:
-
-.. TODO:: This section is missing the command after #... I'm assuming sh ip route vrf internet 		
+Verify two paths are available and installed in the routing table of E_CPE_A for 10.99.99.0/24 via E_A_BIGIP and E_B_BIGIP:	
 
 .. code-block:: none
 
-    csr1000v-E_CPE_A#
+    csr1000v-E_CPE_A#show ip route vrf internet
     
     Routing Table: internet
     Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
@@ -691,7 +692,7 @@ Verify AS-Path-Prepending inbound on E_CPE_A for 10.99.99.0/24 from E_A_BIGIP:
         *>   3.3.3.3/32       10.2.20.3       4294967295             0 65202 65205 i
         *    10.99.99.0/24    10.2.20.3       4294967295             0 65202 988 i
     
-    Verify that E_A_BIGIP is no longer an installed route or preferred in BGP RIB for 10.99.99.0/24 on E_CPE_A:
+Verify that E_A_BIGIP is no longer an installed route or preferred in BGP RIB for 10.99.99.0/24 on E_CPE_A:
 		
 .. code-block:: none
 
@@ -1210,8 +1211,8 @@ Verify path via Virtual Server 10.99.99.102 is no longer up via West DC and now 
     root@jumphost:~# 
     
 		
-We can also re-introduce E_B_BIGIP-13 in the East DC via the /25's:
--------------------------------------------------------------------
+Re-introduce E_B_BIGIP-13 in the East DC via the /25's:
+-------------------------------------------------------
 		
 .. code-block:: none
 

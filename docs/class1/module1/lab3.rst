@@ -90,3 +90,5 @@ On E_A_BIGIP disable BGP debugging:
     E_A_BIGIP-13.local[0]#wr
     Building configuration...
     [OK]
+
+.. NOTE:: This completes Lab 3

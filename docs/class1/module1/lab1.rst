@@ -537,7 +537,7 @@ You can either wait until the route update occurs or you can reset the BGP neigh
         L        172.16.3.4/32 is directly connected, GigabitEthernet3
         B        172.16.6.0/24 [20/0] via 172.16.1.3, 00:30:44
 
-	On the CPE devices look at the result of the show ip bgp command
+On the CPE devices look at the result of the show ip bgp command
 
 .. code-block:: none
 
@@ -567,12 +567,10 @@ You can either wait until the route update occurs or you can reset the BGP neigh
 
 .. NOTE:: Compare the show ip route output in the previous step to the show ip bgp output. What looks out of place here? Why is it there? Why does it not show up in the routing table?
 	
-####### NOTE TO DAVE AND BRANDON ################################################
-# Discuss why this could be problematic. Static default route and redistribute kernel :-O
-###################################################################################
+
 
 Create an aggregate route since many service providers will not accept anything less than a /24
----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
 
 On both of the West BIG-IPs configure ZebOS to only advertise an aggregate route for the virtual server network and filter out the core network advertisement.
 
@@ -619,7 +617,7 @@ Clear ip bgp * on the active BIG-IP such that /32 is no longer advertised.
 .. code-block:: none
 
     csr1000v-W_CPE_A#sh ip route
-        .
+        
         Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
                 D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
                 N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
@@ -629,9 +627,9 @@ Clear ip bgp * on the active BIG-IP such that /32 is no longer advertised.
                 o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
                 a - application route
                 + - replicated route, % - next hop override, p - overrides from PfR
-        .
+
         Gateway of last resort is not set
-        .
+        
                 1.0.0.0/32 is subnetted, 2 subnets
         C        1.1.1.1 is directly connected, Loopback100
         O        1.1.1.2 [110/2] via 10.1.10.4, 03:04:37, GigabitEthernet4
@@ -719,9 +717,9 @@ Now look at the routing table on the CPE virtual server.
             o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
             a - application route
             + - replicated route, % - next hop override, p - overrides from PfR
-    .
+    
     Gateway of last resort is not set
-    .
+    
             1.0.0.0/32 is subnetted, 2 subnets
     C        1.1.1.1 is directly connected, Loopback100
     O        1.1.1.2 [110/2] via 10.1.10.4, 00:57:32, GigabitEthernet4
@@ -743,7 +741,7 @@ On the active BIG-IP look at the routing table.
 .. code-block:: none
 
     W_B_BIGIP-13.local[0]#sh ip route
-        .
+        
         Codes: K - kernel, C - connected, S - static, R - RIP, B - BGP
                 O - OSPF, IA - OSPF inter area
                 N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
@@ -782,7 +780,7 @@ Re-enable the pool and then review the BIG-IP and CPE route tables.
                 E1 - OSPF external type 1, E2 - OSPF external type 2
                 i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
                 * - candidate default
-        .
+        
         B       1.1.1.1/32 [200/0] via 10.1.10.3, external, 00:58:09
         B       1.1.1.2/32 [200/0] via 10.1.10.4, external, 00:58:09
         C       10.1.10.0/24 is directly connected, external
@@ -793,7 +791,7 @@ Re-enable the pool and then review the BIG-IP and CPE route tables.
         C       127.0.0.1/32 is directly connected, lo
         C       127.1.1.254/32 is directly connected, tmm
         C       192.168.255.0/24 is directly connected, ha
-        .
+        
         Gateway of last resort is not set
 
 .. code-block:: none
@@ -808,9 +806,9 @@ Re-enable the pool and then review the BIG-IP and CPE route tables.
                 o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
                 a - application route
                 + - replicated route, % - next hop override, p - overrides from PfR
-        .
+        
         Gateway of last resort is not set
-        .
+        
                 1.0.0.0/32 is subnetted, 2 subnets
         C        1.1.1.1 is directly connected, Loopback100
         O        1.1.1.2 [110/2] via 10.1.10.4, 01:10:54, GigabitEthernet4
@@ -865,9 +863,9 @@ Modify the virtual-address for the second virtual server to allow route-advertis
                 o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
                 a - application route
                 + - replicated route, % - next hop override, p - overrides from PfR
-        .
+        
         Gateway of last resort is not set
-        .
+        
                 1.0.0.0/32 is subnetted, 2 subnets
         C        1.1.1.1 is directly connected, Loopback100
         O        1.1.1.2 [110/2] via 10.1.10.4, 01:21:27, GigabitEthernet4
