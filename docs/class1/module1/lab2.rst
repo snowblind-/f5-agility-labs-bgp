@@ -1332,7 +1332,7 @@ csr1000v-SP_C:  Verify 10.99.99.128 /25 is available on SP_C IP BGP RIB table vi
             rx pathid: 0, tx pathid: 0x0
 
 
- csr1000v-SP_C:  Verify 10.99.99.128 /25 is installed on SP_C IP routing table via East DC leveraging 10.99.99.128 /25.  You will notice the route installed is via East DC via AS 65002.   
+csr1000v-SP_C:  Verify 10.99.99.128 /25 is installed on SP_C IP routing table via East DC leveraging 10.99.99.128 /25.  You will notice the route installed is via East DC via AS 65002.   
  
 .. code-block:: none
 
@@ -1729,9 +1729,9 @@ Create the following virtual server and pool member on both E_A_BIGIP-13 and E_B
 
 E_A_BIGIP-13:  Your virtual server should now show available on E_A_BIGIP-13
 
-root@E_A_BIGIP-13:Active:Standalone] config # tmsh show ltm virtual vip3
-
 .. code-block:: none
+
+    root@E_A_BIGIP-13:Active:Standalone] config # tmsh show ltm virtual vip3
 
     ------------------------------------------------------------------
     Ltm::Virtual Server: vip3      
@@ -1747,9 +1747,9 @@ root@E_A_BIGIP-13:Active:Standalone] config # tmsh show ltm virtual vip3
 
 E_B_BIGIP-13:  Your virtual server should now show available on E_B_BIGIP-13
 
-root@E_B_BIGIP-13:Active:Standalone] config # tmsh show ltm virtual vip3
-
 .. code-block:: none
+
+    root@E_B_BIGIP-13:Active:Standalone] config # tmsh show ltm virtual vip3
 
     ------------------------------------------------------------------
     Ltm::Virtual Server: vip3      
