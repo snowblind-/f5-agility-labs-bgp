@@ -851,40 +851,40 @@ E_CPE_A_CSR1k:  Verify that E_A_BIGIP is no longer an installed route or preferr
 
     csr1000v-E_CPE_A>sh ip route vrf internet
  
-Routing Table: internet
-Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
-       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
-       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
-       E1 - OSPF external type 1, E2 - OSPF external type 2
-       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
-       ia - IS-IS inter area, * - candidate default, U - per-user static route
-       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
-       a - application route
-       + - replicated route, % - next hop override, p - overrides from PfR
+    Routing Table: internet
+    Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+           D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+           N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+           E1 - OSPF external type 1, E2 - OSPF external type 2
+           i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+           ia - IS-IS inter area, * - candidate default, U - per-user static route
+           o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+           a - application route
+           + - replicated route, % - next hop override, p - overrides from PfR
  
-Gateway of last resort is not set
+    Gateway of last resort is not set
  
-      1.0.0.0/32 is subnetted, 2 subnets
-B        1.1.1.1 [20/4294967294] via 172.16.6.3, 1d01h
-B        1.1.1.2 [20/4294967294] via 172.16.6.3, 1d01h
-      3.0.0.0/32 is subnetted, 1 subnets
-B        3.3.3.3 [20/4294967294] via 10.2.30.3, 00:05:07
-                 [20/4294967294] via 10.2.20.3, 00:05:07
-      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
-C        10.2.20.0/24 is directly connected, GigabitEthernet2
-L        10.2.20.4/32 is directly connected, GigabitEthernet2
-C        10.2.30.0/24 is directly connected, GigabitEthernet3
-L        10.2.30.4/32 is directly connected, GigabitEthernet3
-B        10.99.99.0/24 [20/4294967294] via 10.2.30.3, 00:05:11
-      99.0.0.0/24 is subnetted, 1 subnets
-B        99.99.99.0 [20/4294967294] via 172.16.6.3, 1d01h
-      172.16.0.0/16 is variably subnetted, 5 subnets, 2 masks
-B        172.16.1.0/24 [20/4294967294] via 172.16.6.3, 1d01h
-B        172.16.2.0/24 [20/4294967294] via 172.16.6.3, 1d01h
-C        172.16.6.0/24 is directly connected, GigabitEthernet5
-L        172.16.6.4/32 is directly connected, GigabitEthernet5
-B        172.16.99.0/24 [20/0] via 172.16.6.3, 1d01h
-csr1000v-E_CPE_A>
+          1.0.0.0/32 is subnetted, 2 subnets
+    B        1.1.1.1 [20/4294967294] via 172.16.6.3, 1d01h
+    B        1.1.1.2 [20/4294967294] via 172.16.6.3, 1d01h
+          3.0.0.0/32 is subnetted, 1 subnets
+    B        3.3.3.3 [20/4294967294] via 10.2.30.3, 00:05:07
+                     [20/4294967294] via 10.2.20.3, 00:05:07
+          10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+    C        10.2.20.0/24 is directly connected, GigabitEthernet2
+    L        10.2.20.4/32 is directly connected, GigabitEthernet2
+    C        10.2.30.0/24 is directly connected, GigabitEthernet3
+    L        10.2.30.4/32 is directly connected, GigabitEthernet3
+    B        10.99.99.0/24 [20/4294967294] via 10.2.30.3, 00:05:11
+          99.0.0.0/24 is subnetted, 1 subnets
+    B        99.99.99.0 [20/4294967294] via 172.16.6.3, 1d01h
+          172.16.0.0/16 is variably subnetted, 5 subnets, 2 masks
+    B        172.16.1.0/24 [20/4294967294] via 172.16.6.3, 1d01h
+    B        172.16.2.0/24 [20/4294967294] via 172.16.6.3, 1d01h
+    C        172.16.6.0/24 is directly connected, GigabitEthernet5
+    L        172.16.6.4/32 is directly connected, GigabitEthernet5
+    B        172.16.99.0/24 [20/0] via 172.16.6.3, 1d01h
+    csr1000v-E_CPE_A>
 
 
 .. NOTE::
@@ -1062,43 +1062,43 @@ E_CPE_A_CSR1k:  Verify that both E_A_BIGIP & E_B_BIGIP is now valid again for 10
  	
 .. code-block:: none
 
-csr1000v-E_CPE_A>sh ip route vrf internet
+    csr1000v-E_CPE_A>sh ip route vrf internet
  
-Routing Table: internet
-Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
-       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
-       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
-       E1 - OSPF external type 1, E2 - OSPF external type 2
-       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
-       ia - IS-IS inter area, * - candidate default, U - per-user static route
-       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
-       a - application route
-       + - replicated route, % - next hop override, p - overrides from PfR
+    Routing Table: internet
+    Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+           D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+           N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+           E1 - OSPF external type 1, E2 - OSPF external type 2
+           i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+           ia - IS-IS inter area, * - candidate default, U - per-user static route
+           o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+           a - application route
+           + - replicated route, % - next hop override, p - overrides from PfR
  
-Gateway of last resort is not set
+    Gateway of last resort is not set
  
-      1.0.0.0/32 is subnetted, 2 subnets
-B        1.1.1.1 [20/4294967294] via 172.16.6.3, 1d01h
-B        1.1.1.2 [20/4294967294] via 172.16.6.3, 1d01h
-      3.0.0.0/32 is subnetted, 1 subnets
-B        3.3.3.3 [20/4294967294] via 10.2.30.3, 00:08:00
-                 [20/4294967294] via 10.2.20.3, 00:08:00
-      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
-C        10.2.20.0/24 is directly connected, GigabitEthernet2
-L        10.2.20.4/32 is directly connected, GigabitEthernet2
-C        10.2.30.0/24 is directly connected, GigabitEthernet3
-L        10.2.30.4/32 is directly connected, GigabitEthernet3
-B        10.99.99.0/24 [20/4294967294] via 10.2.30.3, 00:07:57
-                       [20/4294967294] via 10.2.20.3, 00:07:57
-      99.0.0.0/24 is subnetted, 1 subnets
-B        99.99.99.0 [20/4294967294] via 172.16.6.3, 1d01h
-      172.16.0.0/16 is variably subnetted, 5 subnets, 2 masks
-B        172.16.1.0/24 [20/4294967294] via 172.16.6.3, 1d01h
-B        172.16.2.0/24 [20/4294967294] via 172.16.6.3, 1d01h
-C        172.16.6.0/24 is directly connected, GigabitEthernet5
-L        172.16.6.4/32 is directly connected, GigabitEthernet5
-B        172.16.99.0/24 [20/0] via 172.16.6.3, 1d01h
-csr1000v-E_CPE_A>
+          1.0.0.0/32 is subnetted, 2 subnets
+    B        1.1.1.1 [20/4294967294] via 172.16.6.3, 1d01h
+    B        1.1.1.2 [20/4294967294] via 172.16.6.3, 1d01h
+          3.0.0.0/32 is subnetted, 1 subnets
+    B        3.3.3.3 [20/4294967294] via 10.2.30.3, 00:08:00
+                     [20/4294967294] via 10.2.20.3, 00:08:00
+          10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+    C        10.2.20.0/24 is directly connected, GigabitEthernet2
+    L        10.2.20.4/32 is directly connected, GigabitEthernet2
+    C        10.2.30.0/24 is directly connected, GigabitEthernet3
+    L        10.2.30.4/32 is directly connected, GigabitEthernet3
+    B        10.99.99.0/24 [20/4294967294] via 10.2.30.3, 00:07:57
+                           [20/4294967294] via 10.2.20.3, 00:07:57
+          99.0.0.0/24 is subnetted, 1 subnets
+    B        99.99.99.0 [20/4294967294] via 172.16.6.3, 1d01h
+          172.16.0.0/16 is variably subnetted, 5 subnets, 2 masks
+    B        172.16.1.0/24 [20/4294967294] via 172.16.6.3, 1d01h
+    B        172.16.2.0/24 [20/4294967294] via 172.16.6.3, 1d01h
+    C        172.16.6.0/24 is directly connected, GigabitEthernet5
+    L        172.16.6.4/32 is directly connected, GigabitEthernet5
+    B        172.16.99.0/24 [20/0] via 172.16.6.3, 1d01h
+    csr1000v-E_CPE_A>
 
 
 .. NOTE::
@@ -1560,7 +1560,7 @@ First will be 10.99.99.0 /25:
 
 .. code-block:: none
 
-csr1000v-SP_C>sh ip bgp 10.99.99.0 255.255.255.128
+    csr1000v-SP_C>sh ip bgp 10.99.99.0 255.255.255.128
     BGP routing table entry for 10.99.99.0/25, version 38
     Paths: (2 available, best #2, table default)
         Advertised to update-groups:
