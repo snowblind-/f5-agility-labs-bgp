@@ -1529,7 +1529,7 @@ E_CPE_A_CSR1k:  Verify that 10.99.99.0/24, 10.99.99.0/24, and 10.99.99.128/25 ar
 
 E_CPE_A_CSR1k:  As an example, let’s take a closer look the bgp table for 10.99.99.128/25 on E_CPE_A:
 
- .. code-block:: none
+.. code-block:: none
 
     csr1000v-E_CPE_A>sh ip bgp vpnv4 vrf internet 10.99.99.128/25
     BGP routing table entry for 65201:1000:10.99.99.128/25, version 98
