@@ -10,6 +10,7 @@ On E_A_BIGIP configure the following logging statement for BGP:
 .. code-block:: none
 
     [root@E_A_BIGIP-13:Active:Standalone] log # imish
+    E_A_BIGIP-13.local[0]>enable
     E_A_BIGIP-13.local[0]#conf t
     Enter configuration commands, one per line.  End with CNTL/Z.
     E_A_BIGIP-13.local[0](config)#log file /var/log/zebos/rd0/zebos.log
@@ -52,7 +53,7 @@ On E_A_BIGIP configure the following logging statement for BGP:
 		
 .. code-block:: none
 
-    root@(E_A_BIGIP-13)(cfg-sync Standalone)(Active)(/Common)(tmos)# bash
+    root@(E_A_BIGIP-13)(cfg-sync Standalone)(Active)(/Common)(tmos)# quit
     [root@E_A_BIGIP-13:Active:Standalone] config # cd /var/log
     [root@E_A_BIGIP-13:Active:Standalone] log # ls | grep zebos
     zebos
